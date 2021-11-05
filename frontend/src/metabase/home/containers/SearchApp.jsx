@@ -40,6 +40,12 @@ const SEARCH_FILTERS = [
     icon: "database",
   },
   {
+    name: t`Datasets`,
+    filter: "dataset",
+    icon: "dataset",
+    iconSize: 18,
+  },
+  {
     name: t`Raw Tables`,
     filter: "table",
     icon: "table",
@@ -164,7 +170,7 @@ export default function SearchApp({ location }) {
                           query: { ...location.query, type: f.filter },
                         }}
                       >
-                        <Icon mr={1} name={f.icon} />
+                        <Icon mr={1} name={f.icon} size={f.iconSize || 16} />
                         <h4>{f.name}</h4>
                       </Link>
                     );
