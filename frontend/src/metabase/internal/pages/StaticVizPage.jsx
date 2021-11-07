@@ -209,6 +209,34 @@ export default function StaticVizPage() {
             }}
           />
         </Box>
+        <Box py={3}>
+          <Subhead>Waterfall chart with timeseries data</Subhead>
+          <StaticChart
+            type="waterfall"
+            options={{
+              data: [
+                ["2020-10-18", 20],
+                ["2020-10-19", 20],
+                ["2020-10-20", 20],
+                ["2020-10-21", 20],
+                ["2020-10-22", 100],
+                ["2020-10-23", -10],
+                ["2020-10-24", 20],
+                ["2020-10-25", -30],
+                ["2020-10-26", -10],
+                ["2020-10-27", 20],
+              ],
+              accessors: {
+                x: row => new Date(row[0]).valueOf(),
+                y: row => row[1],
+              },
+              labels: {
+                left: "Count",
+                bottom: "Created At",
+              },
+            }}
+          />
+        </Box>
       </Box>
     </Box>
   );

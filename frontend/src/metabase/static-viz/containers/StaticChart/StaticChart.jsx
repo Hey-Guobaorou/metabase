@@ -7,6 +7,7 @@ import CategoricalLineChart from "../../components/CategoricalLineChart";
 import TimeSeriesAreaChart from "../../components/TimeSeriesAreaChart";
 import TimeSeriesBarChart from "../../components/TimeSeriesBarChart";
 import TimeSeriesLineChart from "../../components/TimeSeriesLineChart";
+import WaterfallChart from "../../components/WaterfallChart";
 
 const propTypes = {
   type: PropTypes.oneOf([
@@ -37,6 +38,8 @@ const StaticChart = ({ type, options }) => {
       return <TimeSeriesBarChart {...options} />;
     case "timeseries/line":
       return <TimeSeriesLineChart {...options} />;
+    case "waterfall":
+      return <WaterfallChart {...options} />;
   }
 };
 
